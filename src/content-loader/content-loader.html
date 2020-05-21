@@ -1,0 +1,63 @@
+<svg version="1.1" viewBox="0 0 ${width} ${height}" preserveAspectRatio="${preserveAspectRatio}" css.bind="style">
+  <rect clip-path.bind="clipStyle" css.bind="fillStyle" x="0" y="0" width.bind="width" height.bind="height"></rect>
+
+  <defs>
+    <clipPath if.bind="type === 'list'" id.bind="idClip">
+      <rect width="200" height="10" y="0" x="0" rx="5" ry="5"></rect>
+      <rect width="180" height="10" y="20" x="20" rx="5" ry="5"></rect>
+      <rect width="160" height="10" y="40" x="20" rx="5" ry="5"></rect>
+      <rect width="200" height="10" y="60" x="0" rx="5" ry="5"></rect>
+      <rect width="180" height="10" y="80" x="20" rx="5" ry="5"></rect>
+      <rect width="60" height="10" y="100" x="20" rx="5" ry="5"></rect>
+    </clipPath>
+    <clipPath if.bind="type === 'bullet-list'" id.bind="idClip">
+      <circle cx="7" cy="7" r="7"></circle>
+      <circle cx="7" cy="37" r="7"></circle>
+      <circle cx="7" cy="67" r="7"></circle>
+      <circle cx="7" cy="97" r="7"></circle>
+      <rect width="200" height="12" y="2" x="20" rx="5" ry="5"></rect>
+      <rect width="200" height="12" y="32" x="20" rx="5" ry="5"></rect>
+      <rect width="200" height="12" y="62" x="20" rx="5" ry="5"></rect>
+      <rect width="200" height="12" y="92" x="20" rx="5" ry="5"></rect>
+    </clipPath>
+    <clipPath if.bind="type === 'instagram'" id.bind="idClip">
+      <circle cx="25" cy="25" r="25"></circle>
+      <rect width="120" height="10" y="10" x="60" rx="5" ry="5"></rect>
+      <rect width="40" height="5" y="30" x="60" rx="5" ry="5"></rect>
+      <rect width="250" height="250" y="60" x="0" rx="5" ry="5"></rect>
+    </clipPath>
+    <clipPath if.bind="type === 'facebook'" id.bind="idClip">
+      <circle cx="25" cy="25" r="25"></circle>
+      <rect width="100" height="5" y="15" x="60" rx="5" ry="5"></rect>
+      <rect width="60" height="5" y="30" x="60" rx="5" ry="5"></rect>
+      <rect width="170" height="5" y="65" x="0" rx="5" ry="5"></rect>
+      <rect width="220" height="5" y="80" x="0" rx="5" ry="5"></rect>
+      <rect width="130" height="5" y="95" x="0" rx="5" ry="5"></rect>
+    </clipPath>
+    <clipPath if.bind="type === 'code'" id.bind="idClip">
+      <rect width="60" height="10" y="15" x="0" rx="5" ry="5"></rect>
+      <rect width="90" height="10" y="15" x="70" rx="5" ry="5"></rect>
+      <rect width="20" height="10" y="15" x="170" rx="5" ry="5"></rect>
+      <rect width="100" height="10" y="35" x="9" rx="5" ry="5"></rect>
+      <rect width="120" height="10" y="35" x="120" rx="5" ry="5"></rect>
+      <rect width="90" height="10" y="55" x="5" rx="5" ry="5"></rect>
+      <rect width="90" height="10" y="55" x="105" rx="5" ry="5"></rect>
+      <rect width="70" height="10" y="55" x="205" rx="5" ry="5"></rect>
+      <rect width="30" height="10" y="75" x="0" rx="5" ry="5"></rect>
+    </clipPath>
+
+    <linearGradient id.bind="idGradient">
+      <stop offset="0%" stop-color.bind="primaryColor" stop-opacity.bind="primaryOpacity">
+        <animate if.bind="animate" attributeName="offset" values="${animationValues[0]}" dur="${speed}s" repeatCount="indefinite"></animate>
+      </stop>
+
+      <stop offset="50%" stop-color.bind="secondaryColor" stop-opacity.bind="secondaryOpacity">
+        <animate if.bind="animate" attributeName="offset" values="${animationValues[1]}" dur="${speed}s" repeatCount="indefinite"></animate>
+      </stop>
+
+      <stop offset="100%" stop-color.bind="primaryColor" stop-opacity.bind="primaryOpacity">
+        <animate if.bind="animate" attributeName="offset" values="${animationValues[2]}" dur="${speed}s" repeatCount="indefinite"></animate>
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
